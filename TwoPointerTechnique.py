@@ -64,12 +64,25 @@ def intersection(headA, headB):
     return None
 
 
-def removeNthNode(head, n):
-    '''
-    Given the head of a linkedlist , remove the nth node from the end of
-    the list and return its head
-    '''
-    pass
-
-for i in range(2):
-    print(i)
+# Remove node from nth of the end of the list
+# Definition for singly-linked list.
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+    def removeNthNode(head, n):
+        '''
+        Given the head of a linkedlist , remove the nth node from the end of
+        the list and return its head
+        '''
+        dummy = ListNode(0, head)
+        left = dummy
+        right = head
+        
+        for i in range(n):
+            right = right.next
+        while right != None:
+            left = left.next
+            right = right.next
+        left.next = left.next.next
+        return dummy.next
