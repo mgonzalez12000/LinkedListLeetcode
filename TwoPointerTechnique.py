@@ -86,3 +86,26 @@ class ListNode(object):
             right = right.next
         left.next = left.next.next
         return dummy.next
+    
+
+'''
+Here we provide a template to solve common two pointer problems using the
+Linked list data structure
+
+Assume you have a predefined ListNode method
+'''
+
+ListNode slow = head
+ListNode fast = head
+'''
+Change this condition to satisfy certain problems. Can vary.
+NOTICE: remember to avoid null point exceptions aka errors
+'''
+while slow != None and fast != None and fast.next = None:
+    slow = slow.next # move slow pointer one step at a time
+    fast = fast.next.next # move fast pointer two steps at a time
+    if slow == fast: # change this condition to satisfy problem
+        return True
+return False # change rtype to satisfy problem
+
+# Ignore errors, this is just an outline
