@@ -1,0 +1,5 @@
+This repo was designed to take on the linkedlist course that is offered
+on leetcode's site. If you struggle with linkedlists, I highly suggest taking
+this course before continuing with Neetcodes roadmap.
+
+Link to course: https://leetcode.com/explore/learn/card/linked-list/

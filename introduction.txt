@@ -1,0 +1,54 @@
+Similar to an array, the linked list is also a LINEAR data structure.
+There are two types of linked list: Singly linkedlist and doubly linkedlist.
+
+Each node in a single linked list contains two parts. The value AND a reference field which points to the next node
+The singly linked list organizes all the nodes in a sequence.
+
+NOTE: In most cases when solving problems, we will use the head node (the first node of the linkedlist) to represent the whole list
+
+Operations:
+Unlike the array DS, we are not able to access an element in a singly list in constant time. This is because in a LL we have to traverse...
+through the entire LL's chain one by one. Therefore it will take us a time complexity of O(n) to visit an element by index, where n is the len of the list.
+
+- Add: 
+    If we want to add a new value after a given node prev, we should:
+    - Initalize a new node cur with the given value
+    - Linked the next field of cur to the prev next node 'next'
+    - Linked the next field in prev to cur
+
+    eg:
+    Assume we have a predefined Node class and the following built LL:
+    23 -> 6 -> 15
+
+    new_node = Node(9)
+    new_node.next = prev_node.next # points to 15
+    prev_node.next = new_node # points to 9 aka new node
+
+    after insertion, our linkedlist will look like this:
+    23 -> 6 -> 9 -> 15
+
+
+    Adding a node to the beginnning of a LL
+    eg:
+    Assume we have a predefined Node class and the following built LL:
+    2 -> 10 -> 1 -> 9
+
+    new_node = Node(3)
+    new_node.next = self.head
+    self.head = new_node
+
+    after insertion, our linkedlist will look like this:
+    3 -> 2 -> 10 -> 1 -> 9
+
+- Delete:
+    If we want to delete an exisited node cur from the singly linkedlist, we can do it in two steps
+    - Find cur's previous node prev, and its next node 'next'
+    - Link prev to cur's next node next.
+
+    eg:
+    Assume we have the following built LL:
+    23 -> 6 -> 15
+
+    1. traverse the linked list from the head until we find the previous node prev which is node 23
+    2. link prev (node 23) with next (node 15)
+    
